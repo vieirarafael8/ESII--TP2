@@ -1,4 +1,6 @@
-﻿FASE A :
+﻿Requisitos
+
+FASE A :
 
 removeDigitos:
 - inputs: documento
