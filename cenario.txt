@@ -1,0 +1,13 @@
+Cenário:
+
+pré-condição: null
+pós-condição: é criada uma lista com os rankings dos documentos por grau de similaridade
+
+Etapa	|	Descrição
+
+1	|	o utilizador indica a pasta com os documentos de texto
+2	|	é feita a limpeza dos documentos
+3	|	é criada a  matriz M com o número de ocorrências de cada palavra na coleção de documentos
+4	|	criar matriz Q para a query de pesquisa
+5	|	calcular o grau de similidariedade usando as matrizes criadas anteriormente
+6	|	criar a lista com o ranking dos documentos

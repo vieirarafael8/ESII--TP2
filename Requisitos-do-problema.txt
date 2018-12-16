@@ -1,0 +1,21 @@
+﻿Requisitos:
+
+Fase A - Preparação
+
+-Abrir e ler ficheiros de texto de uma coleção;
+-Método que elimine todos os digitos presentes em todos os documentos;
+-Método que elimine todos os caracteres de pontuação presentes em todos os documentos;
+-Criar uma matriz com o numero de ocorrencias  de cada palavra na coleção de documentos;
+-Criar uma matriz para a query de pesquisa;
+
+Fase B - Calculo
+
+-Método para efetuar a verificação da semelhança do array de pesquisa com cada linha da matriz;
+-Guardar em array uma lista com todos os ficheiros analisados e ordenar por similaridade;
+
+Fase C - Apresentação de Resultados
+
+-Criação da lista final com o ranking dos documentos tendo por base a semelhança entre a pesquisa e os documentos;
+-Método de retorno de uma lista com todos os ficheiros analisados por ordem de similaridade;
+-Método que retorne apenas os ficheiros com um grau de similaridade superior ao definido por input externo;
+-Método que retorne apenas uma lista um máximo de ficheiros definido também por input externo;

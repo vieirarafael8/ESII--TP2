@@ -1,0 +1,38 @@
+﻿FASE A :
+
+removeDigitos:
+- inputs: documento
+- output: documento sem digitos
+
+removeCarateresPont:
+- inputs: documento
+- output: documento sem caracteres especiais
+
+matriz de ocorrencias:
+- inputs: documento
+- output: matriz
+
+matriz Q:
+- inputs: matriz de ocorrencias, n total documentos, nº de docs com a palavra p
+- outputs: array 
+- exceções: nao divisivel por 0
+
+FASE B:
+
+verificar semelhança:
+- inputs: ML (array da linha L da matriz M) e Q array da query de pesquisa
+- outputs: grau de similariedade 
+
+FASE C:
+
+metodo retorno lista de ficheiros por ordem de similaridade:
+- inputs: lista final de ranking
+- outputs: lista de ficheiros por ordem de similaridade
+
+metodo que retorne ficheiros com grau de similaridade superior ao definido:
+-inputs: lista final de ranking e valor de grau definido
+-outputs: ficheiros com grau de similaridade superior ao definido
+
+metodo que retorne lista 
+- inputs: lista de ranking  e maximo de ficheiros a listar
+- outputs: lista com maximo de ficheiros dado
