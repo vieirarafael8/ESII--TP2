@@ -22,7 +22,6 @@ public class X {
             System.out.println(new X().removeDigitos(st));
             System.out.println(new X().removeCarateresPont(st));
         }
-
     }
 
 
