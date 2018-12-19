@@ -1,5 +1,6 @@
 plugins {
     id 'java'
+    id 'base'
 }
 
 version '1.0-SNAPSHOT'
@@ -14,7 +15,4 @@ dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
 
-plugins {
-    id "base"
-}
 
