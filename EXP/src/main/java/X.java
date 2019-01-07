@@ -2,7 +2,10 @@
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
-
+import java.io.*;
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+import java.util.Scanner;
 
 public class X {
 
@@ -11,19 +14,51 @@ public class X {
 
     public static void main(String[] args) throws Exception {
 
-        File file = new File("C:\\Users\\vieir\\IdeaProjects\\EXP\\src\\main\\java\\file.txt");
+        File file = new File("C:\\Users\\vieir\\Documents\\GitHub\\ESII--TP2\\EXP\\file.txt");
 
         BufferedReader br = new BufferedReader(new FileReader(file));
 
         String st;
         while ((st = br.readLine()) != null) {
-            System.out.println(st);
+           // System.out.println(st);
 
-            System.out.println(new X().removeDigitos(st));
-            System.out.println(new X().removeCarateresPont(st));
+           // System.out.println(new X().removeDigitos(st));
+            //System.out.println(new X().removeCarateresPont(st));
         }
-    }
 
+        Scanner scan = new Scanner(System.in);
+
+      /*  String palavra;
+
+        System.out.println("Informe o que deseja buscar: ");
+        palavra=scan.next();
+        int resposta = procura(file,palavra);
+        System.out.println("O total de ocorrencias sao: "+resposta);*/
+
+        int count = 0;
+       String[] palavra=new String[5];
+        try (LineNumberReader r = new LineNumberReader(new FileReader(file))) {
+            String line;
+
+            while ((line = r.readLine()) != null) {
+                for (String element : line.split(" ")) {
+                    for (int j = 0; j < palavra.length; j++) {
+                        if (element.equals(palavra[j])) {
+                            count++;
+                        }
+                        else{
+                            palavra[j]=element;
+                        }
+                    }
+                }
+            }
+        }
+        for(int i=0; i<palavra.length; i++){
+            System.out.println(palavra[i]);
+        }
+        System.out.println("count= " + count );
+
+    }
 
     public String removeDigitos(String src){
         char[] srcArr = src.toCharArray();
