@@ -9,8 +9,8 @@ import java.util.Scanner;
 
 public class X {
 
-    char[] deleteDigitos = {'0','1','2','3','4','5','6','7','8','9'};
-    char[] deletePont = {'?','.',';',',',':', '!', '-','(',')','_', '/','*','[',']'};
+    char[] deleteDigitos = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
+    char[] deletePont = {'?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
 
     public static void main(String[] args) throws Exception {
 
@@ -20,13 +20,13 @@ public class X {
 
         String st;
         while ((st = br.readLine()) != null) {
-           // System.out.println(st);
+            // System.out.println(st);
 
-           // System.out.println(new X().removeDigitos(st));
+            // System.out.println(new X().removeDigitos(st));
             //System.out.println(new X().removeCarateresPont(st));
         }
 
-        Scanner scan = new Scanner(System.in);
+        // Scanner scan = new Scanner(System.in);
 
       /*  String palavra;
 
@@ -36,65 +36,77 @@ public class X {
         System.out.println("O total de ocorrencias sao: "+resposta);*/
 
         int count = 0;
-       String[] palavra=new String[5];
+        ArrayList<Palavra> palavra = new ArrayList();
+
         try (LineNumberReader r = new LineNumberReader(new FileReader(file))) {
             String line;
 
             while ((line = r.readLine()) != null) {
                 for (String element : line.split(" ")) {
-                    for (int j = 0; j < palavra.length; j++) {
-                        if (element.equals(palavra[j])) {
-                            count++;
-                        }
-                        else{
-                            palavra[j]=element;
+                    if (palavra.size() == 0) {
+                        Palavra palavra3 = new Palavra(element, 1);
+                        palavra.add(palavra3);
+                    } else {
+                        for (int i = 0; i <= palavra.size(); i++) {
+                            if (!element.equals(palavra.get(i).getDescricao())) {
+                                Palavra palavra1 = new Palavra(element, palavra.get(i).getCount() + 1);
+
+                                palavra.add(palavra1);
+
+                            } else {
+                                palavra.get(i).setCount(palavra.get(i).getCount() + 1);
+                            }
+
                         }
                     }
+
                 }
             }
         }
-        for(int i=0; i<palavra.length; i++){
-            System.out.println(palavra[i]);
+        for (int i = 0; i < palavra.size(); i++) {
+            System.out.println(palavra.get(i).getDescricao());
+            System.out.println(palavra.get(i).getCount());
         }
-        System.out.println("count= " + count );
+        System.out.println("count= " + count);
 
     }
 
-    public String removeDigitos(String src){
+    public String removeDigitos(String src) {
         char[] srcArr = src.toCharArray();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < srcArr.length; i++) {
             char foundChar = isFoundDig(srcArr[i]);
-            if(foundChar!='\0')
+            if (foundChar != '\0')
                 sb.append(foundChar);
         }
         return sb.toString();
 
     }
 
-    public String removeCarateresPont(String src){
+    public String removeCarateresPont(String src) {
         char[] srcArr = src.toCharArray();
         StringBuilder sb = new StringBuilder();
         for (int i = 0; i < srcArr.length; i++) {
             char foundChar = isFoundPont(srcArr[i]);
-            if(foundChar!='\0')
+            if (foundChar != '\0')
                 sb.append(foundChar);
         }
         return sb.toString();
 
     }
 
-    public char isFoundDig(char src){
+    public char isFoundDig(char src) {
         for (int i = 0; i < deleteDigitos.length; i++) {
-            if(src==deleteDigitos[i]){
+            if (src == deleteDigitos[i]) {
                 return '\0';
             }
         }
         return src;
     }
-    public char isFoundPont(char src){
+
+    public char isFoundPont(char src) {
         for (int i = 0; i < deletePont.length; i++) {
-            if(src==deletePont[i]){
+            if (src == deletePont[i]) {
                 return '\0';
             }
         }
