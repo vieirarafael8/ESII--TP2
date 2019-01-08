@@ -50,6 +50,7 @@ public class X {
                                     if (element.equals(palavra.get(i).getDescricao())) {
                                         palavra.get(i).setCount(palavra.get(i).getCount() + 1);
                                         count++;
+                                        matriz.getPalavra();
                                     }
                                 }
                                 if (count == 0) {
