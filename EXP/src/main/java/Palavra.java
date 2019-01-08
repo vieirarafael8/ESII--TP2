@@ -1,11 +1,11 @@
 public class Palavra {
     private String descricao;
-    private int count;
+    private int count=0;
 
 
     public Palavra(String descricao, int count) {
         this.descricao = descricao;
-        count = 0;
+        this.count=count;
     }
 
 
