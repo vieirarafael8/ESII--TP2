@@ -1,41 +1,61 @@
+import java.io.File;
+import java.util.Arrays;
+import java.util.List;
+
 public class Matriz {
 
-    private int id;
-    private String palavra;
-    private int count;
 
-    public Matriz(int id, String palavra, int count) {
-        this.id = id;
+    private Documento doc;
+    private Palavra palavra;
+    private int countMatriz;
+
+
+    public Matriz(Documento doc, Palavra palavra, int countMatriz) {
+
+        this.doc = doc;
         this.palavra = palavra;
-        this.count = count;
+        this.countMatriz = countMatriz;
     }
 
-    public Matriz(int id, String palavra) {
-        this.id = id;
+    public Matriz(Documento doc, Palavra palavra) {
+        this.doc = doc;
         this.palavra = palavra;
     }
 
-    public int getId() {
-        return id;
+    public Matriz() {
+
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public Documento getDoc() {
+        return doc;
     }
 
-    public String getPalavra() {
+    public void setDoc(Documento doc) {
+        this.doc = doc;
+    }
+
+    public Palavra getPalavra() {
         return palavra;
     }
 
-    public void setPalavra(String palavra) {
+    public void setPalavra(Palavra palavra) {
         this.palavra = palavra;
     }
 
-    public int getCount() {
-        return count;
+    public int getCountMatriz() {
+        return countMatriz;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setCountMatriz(int countMatriz) {
+        this.countMatriz = countMatriz;
+    }
+
+    @Override
+    public String toString() {
+        return "Matriz{" +
+                "doc=" + doc +
+                ", palavra=" + palavra +
+                ", countMatriz=" + countMatriz +
+                '}';
     }
 }
