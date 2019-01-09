@@ -5,9 +5,9 @@ import java.util.LinkedHashSet;
 public class Tratamento {
 
     char[] delete = {'\n','0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
-
+    String[] palavras;
     public File[] listaFicheiros() {
-        File file = new File("C:\\Users\\vieir\\Documents\\GitHub\\ESII--TP2\\EXP");
+        File file = new File("C:\\Users\\nunof\\Desktop\\Universidade\\PAW\\ESII--TP2.1\\EXP");
 
         FilenameFilter textFilter = new FilenameFilter() {
             public boolean accept(File dir, String name) {
@@ -16,7 +16,7 @@ public class Tratamento {
         };
 
         File[] files = file.listFiles(textFilter);
-        System.out.println(files.toString());
+//        System.out.println(files.toString());
         return files;
     }
 
@@ -65,29 +65,36 @@ public class Tratamento {
                     }
                 }
             }
-return 
+            int[][] matriz = new int[numFiles][palavra.size()];
+        palavras = palavra.toArray(new String[0]);
+        for (int k = 0; k < numFiles; k++) {
+            try (LineNumberReader r = new LineNumberReader(new FileReader(f[k]))) {
+                String line;
+                while ((line = r.readLine()) != null) {
+                    String linha = new Tratamento().remove(line).toLowerCase();
+
+
+                        for (int i = 0; i<palavra.size();i++) {
+                            count=0;
+                            for (String element : linha.split(" ")) {
+                                if(palavras[i].compareTo(element)==0)count++;
+                            }
+                            matriz[k][i] = count;
+                        }
+                    }
+                }
+            }
+        for (int i=0; i<palavra.size();i++){
+            System.out.print(palavras[i] + "  | ");
+        }
+        for(int k=0; k<numFiles;k++){
+            System.out.println();
+            for (int i=0; i<palavra.size();i++){
+                System.out.print(matriz[k][i] + "\t|\t");
+            }
+        }
+        return matriz;
         }
 
 
-    public int[][] matriz(ArrayList palavra)throws IOException{
-        int numFiles = listaFicheiros().length;
-        int numPalavras = tratamentoPalavras().size();
-        File[] f = listaFicheiros();
-        String[] aux;
-        ArrayList<Palavra> p = tratamentoPalavras();
-
-        int[][] m=new int[numFiles][numPalavras];
-
-        for(int i=0; i<numFiles; i++){
-            System.out.println("\n");
-          for(int j=0; j<numPalavras; j++){
-                m[i][j]= p.get(j).getCount();
-              System.out.println(p.get(j).getDescricao());
-                System.out.println("contador:"+m[i][j]+"\t");
-          }
-        }
-
-        return m;
     }
-
-}
