@@ -6,6 +6,6 @@ pipeline {
 					checkout scm
 						sh './EXP/gradlew build'
 					}
-					}
 			}
+		}
 }
