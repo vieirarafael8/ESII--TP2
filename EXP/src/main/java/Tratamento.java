@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.LinkedHashSet;
 
 public class Tratamento {
 
@@ -15,6 +16,7 @@ public class Tratamento {
         };
 
         File[] files = file.listFiles(textFilter);
+        System.out.println(files.toString());
         return files;
     }
 
@@ -42,11 +44,11 @@ public class Tratamento {
         return src;
     }
 
-    public ArrayList tratamentoPalavras() throws IOException {
+    public int[][] tratamentoPalavras() throws IOException {
 
         int numFiles = listaFicheiros().length;
         File[] f = listaFicheiros();
-        ArrayList<Palavra> palavra = new ArrayList();
+        LinkedHashSet<String> palavra = new LinkedHashSet<>();
         int count = 0;
 
         for (int k = 0; k < numFiles; k++) {
@@ -56,34 +58,16 @@ public class Tratamento {
                     String linha = new Tratamento().remove(line).toLowerCase();
                     for (String element : linha.split(" ")) {
                         if (!element.equals("")) {
-                            if (palavra.size() == 0) {
-                                Palavra palavra3 = new Palavra(element, 1);
-                                palavra.add(palavra3);
-                            } else {
-                                for (int i = 0; i < palavra.size(); i++) {
-                                    if (element.equals(palavra.get(i).getDescricao())) {
-                                        palavra.get(i).setCount(palavra.get(i).getCount() + 1);
-                                        count++;
-                                    }
-
-                            }
-                            if (count == 0) {
-                                Palavra palavra1 = new Palavra(element, 1);
-                                palavra.add(palavra1);
-                            } else {
-                                count = 0;
-                            }
-
+                            palavra.add(element);
 
                         }
                     }
                     }
                 }
             }
-
+return 
         }
-        return palavra;
-    }
+
 
     public int[][] matriz(ArrayList palavra)throws IOException{
         int numFiles = listaFicheiros().length;
