@@ -1,3 +1,4 @@
+import javax.swing.text.html.parser.Parser;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
@@ -8,7 +9,7 @@ public class Tratamento {
     char[] delete = {'\n','0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
     String[] palavras;
     public File[] listaFicheiros() {
-        File file = new File("C:\\Users\\nunof\\Desktop\\Universidade\\PAW\\ESII--TP2.1\\EXP");
+        File file = new File("C:\\Users\\vieir\\Documents\\GitHub\\ESII--TP2\\EXP");
 
         FilenameFilter textFilter = new FilenameFilter() {
             public boolean accept(File dir, String name) {
@@ -86,6 +87,7 @@ public class Tratamento {
                     }
                 }
             }
+        //IMPRIMIR MATRIZ
         int countforQ=0;
         for (int i=0; i<palavra.size();i++){
             System.out.print(palavras[i] + "  | ");
@@ -98,6 +100,7 @@ public class Tratamento {
             }
         }
 
+
         double[] matrizQ =new double[countforQ];
 
         Scanner input = new Scanner(System.in);
@@ -105,6 +108,7 @@ public class Tratamento {
         System.out.println("\nIntroduza a palavra a pesquisar: \n");
         String p = input.next();
 
+        //CALCULAR
         int countPp =0;
         double countP=0;
         for (int k = 0; k < numFiles; k++) {
@@ -127,7 +131,11 @@ public class Tratamento {
 
             }
         }
-        System.out.println(countP);
+
+        System.out.println("\nA palavra "+p+" esta presente em "+ countP + " ficheiros \n");
+
+        //IMPRIMIR MATRIZ Q COM PRIMEIRA FORMULA APLICADA
+        System.out.println("\nMatriz Q: \n");
         double numeroFicheiro = numFiles;
         if(countP!=0) {
             for (int k = 0; k < numFiles; k++) {
