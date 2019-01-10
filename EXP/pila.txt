@@ -1,1 +1,2 @@
 armas
+armas cenas armas coisas
