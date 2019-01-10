@@ -8,7 +8,8 @@ public class X {
         Tratamento t = new Tratamento();
 
         t.tratamentoPalavras();
-
+        t.imprimirMatriz();
+        t.matrizQ();
 
 
     }

@@ -6,8 +6,10 @@ import java.util.Scanner;
 
 public class Tratamento {
 
-    char[] delete = {'\n','0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
+    char[] delete = {'\n', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
     String[] palavras;
+    int countforQ = 0;
+    LinkedHashSet<String> palavra = new LinkedHashSet<>();
     public File[] listaFicheiros() {
         File file = new File("C:\\Users\\vieir\\Documents\\GitHub\\ESII--TP2\\EXP");
 
@@ -50,7 +52,7 @@ public class Tratamento {
 
         int numFiles = listaFicheiros().length;
         File[] f = listaFicheiros();
-        LinkedHashSet<String> palavra = new LinkedHashSet<>();
+
         int count = 0;
 
         for (int k = 0; k < numFiles; k++) {
@@ -64,10 +66,10 @@ public class Tratamento {
 
                         }
                     }
-                    }
                 }
             }
-            int[][] matriz = new int[numFiles][palavra.size()];
+        }
+        int[][] matriz = new int[numFiles][palavra.size()];
         palavras = palavra.toArray(new String[0]);
 
         for (int k = 0; k < numFiles; k++) {
@@ -77,67 +79,91 @@ public class Tratamento {
                     String linha = new Tratamento().remove(line).toLowerCase();
 
 
-                        for (int i = 0; i<palavra.size();i++) {
-                            count=0;
-                            for (String element : linha.split(" ")) {
-                                if(palavras[i].compareTo(element)==0)count++;
-                            }
-                            matriz[k][i] = count;
+                    for (int i = 0; i < palavra.size(); i++) {
+                        count = 0;
+                        for (String element : linha.split(" ")) {
+                            if (palavras[i].compareTo(element) == 0) count++;
                         }
+                        matriz[k][i] = count;
                     }
                 }
             }
-        //IMPRIMIR MATRIZ
-        int countforQ=0;
-        for (int i=0; i<palavra.size();i++){
+        }
+
+        return matriz;
+    }
+
+
+    public void imprimirMatriz()throws IOException{
+
+        int[][] matriz = tratamentoPalavras();
+
+        int numFiles = listaFicheiros().length;
+        System.out.println();
+        System.out.println("|-------------------------|");
+        System.out.println("|    Matriz Principal:    |");
+        System.out.println("|-------------------------|");
+        for (int i = 0; i < palavra.size(); i++) {
             System.out.print(palavras[i] + "  | ");
         }
-        for(int k=0; k<numFiles;k++){
+        for (int k = 0; k < numFiles; k++) {
             System.out.println();
-            for (int i=0; i<palavra.size();i++){
+            for (int i = 0; i < palavra.size(); i++) {
                 System.out.print(matriz[k][i] + "\t|\t");
                 countforQ++;
             }
         }
+        System.out.println();
+    }
 
 
-        double[] matrizQ =new double[countforQ];
+    public void matrizQ() throws IOException {
+
+        int numFiles = listaFicheiros().length;
+
+        File[] f = listaFicheiros();
+        double[] matrizQ = new double[countforQ];
 
         Scanner input = new Scanner(System.in);
 
-        System.out.println("\nIntroduza a palavra a pesquisar: \n");
+        System.out.println("\n \nIntroduza a palavra a pesquisar: \n");
         String p = input.next();
 
         //CALCULAR
-        int countPp =0;
-        double countP=0;
+        int countPp = 0;
+        double countP = 0;
         for (int k = 0; k < numFiles; k++) {
             try (LineNumberReader r = new LineNumberReader(new FileReader(f[k]))) {
                 String line;
                 while ((line = r.readLine()) != null) {
                     String linha = new Tratamento().remove(line).toLowerCase();
 
-                    for (int i = 0; i<palavra.size();i++) {
-                        countPp=0;
+                    for (int i = 0; i < palavra.size(); i++) {
+                        countPp = 0;
                         for (String element : linha.split(" ")) {
-                            if(element.compareTo(p)==0)countPp++;
+                            if (element.compareTo(p) == 0) countPp++;
                         }
 
                     }
                 }
             }
-            if(countPp>0){
+            if (countPp > 0) {
                 countP++;
 
             }
         }
 
-        System.out.println("\nA palavra "+p+" esta presente em "+ countP + " ficheiros \n");
+        System.out.println("\nA palavra " + p + " esta presente em " + countP + " ficheiros \n");
 
         //IMPRIMIR MATRIZ Q COM PRIMEIRA FORMULA APLICADA
-        System.out.println("\nMatriz Q: \n");
+        System.out.println("|-----------------|");
+        System.out.println("|    Matriz Q:    |");
+        System.out.println("|-----------------|");
+
+        int[][] matriz = tratamentoPalavras();
+
         double numeroFicheiro = numFiles;
-        if(countP!=0) {
+        if (countP != 0) {
             for (int k = 0; k < numFiles; k++) {
                 for (int i = 0; i < palavra.size(); i++) {
 
@@ -147,15 +173,12 @@ public class Tratamento {
 
                 }
             }
-        }else{
-                System.out.println("A palavra indicada não se encontra em nenhum documento!");
-            }
-
-
-        return matriz;
+        } else {
+            System.out.println("\nA palavra indicada não se encontra em nenhum documento!");
         }
 
 
-
-
     }
+
+
+}
