@@ -8,7 +8,7 @@ public class Tratamento {
     char[] delete = {'\n','0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
     String[] palavras;
     public File[] listaFicheiros() {
-        File file = new File("C:\\Users\\vieir\\Documents\\GitHub\\ESII--TP2\\EXP");
+        File file = new File("C:\\Users\\nunof\\Desktop\\Universidade\\PAW\\ESII--TP2.1\\EXP");
 
         FilenameFilter textFilter = new FilenameFilter() {
             public boolean accept(File dir, String name) {
@@ -98,7 +98,7 @@ public class Tratamento {
             }
         }
 
-        int[] matrizQ =new int[countforQ];
+        double[] matrizQ =new double[countforQ];
 
         Scanner input = new Scanner(System.in);
 
@@ -106,7 +106,7 @@ public class Tratamento {
         String p = input.next();
 
         int countPp =0;
-        int countP=0;
+        double countP=0;
         for (int k = 0; k < numFiles; k++) {
             try (LineNumberReader r = new LineNumberReader(new FileReader(f[k]))) {
                 String line;
@@ -128,20 +128,20 @@ public class Tratamento {
             }
         }
         System.out.println(countP);
+        double numeroFicheiro = numFiles;
         if(countP!=0) {
             for (int k = 0; k < numFiles; k++) {
                 for (int i = 0; i < palavra.size(); i++) {
 
-                    matrizQ[i] = (int) (matriz[k][i] * (1 + Math.log10(numFiles / countP)));
+                    matrizQ[i] = (matriz[k][i] * (1 + Math.log10(numeroFicheiro / countP)));
 
+                    System.out.println(matrizQ[i]);
 
                 }
             }
         }else{
                 System.out.println("A palavra indicada não se encontra em nenhum documento!");
             }
-
-       
 
 
         return matriz;
