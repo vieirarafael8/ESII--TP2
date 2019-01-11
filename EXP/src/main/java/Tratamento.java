@@ -9,9 +9,9 @@ public class Tratamento {
 
     char[] delete = {'\n', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
     String[] palavras;
-
+    double[] docs = new double[listaFicheiros().length];
     LinkedHashSet<String> palavra = new LinkedHashSet<>();
-
+    double[] ordenado = new double[listaFicheiros().length];
 
     public File[] listaFicheiros() {
         File file = new File("C:\\Users\\nunof\\Desktop\\Universidade\\PAW\\ESII--TP2.1\\EXP");
@@ -225,9 +225,11 @@ public class Tratamento {
 
         System.out.println();
         System.out.println("Desordenado: \n");
-        for (int k = 0; k < numFiles; k++) {
 
+        for (int k = 0; k < numFiles; k++) {
+            docs[k] = grauSim[k];
             System.out.println("Grau de similariedade com o documento " + (k + 1) + " = " + grauSim[k]);
+
 
         }
 
@@ -239,41 +241,56 @@ public class Tratamento {
     public double[] ordenado() throws IOException {
 
         int numFiles = listaFicheiros().length;
-        double[] ordenado = new double[numFiles];
 
-        double[] desordenado = grauSimilariedade();
-
+        ordenado = grauSimilariedade();
         System.out.println();
         System.out.println("Ordenado:\n");
 
-        Arrays.sort(desordenado);
-        for (int i = desordenado.length-1; i >= 0; i--) {
-            System.out.println("Grau de similariedade=  " + desordenado[i]);
+        Arrays.sort(ordenado);
 
+        for (int i = numFiles - 1; i >= 0; i--) {
+            System.out.println("Grau similariedade do documento = " + ordenado[i]);
         }
         return ordenado;
-
     }
 
 
-    /*public double[] grauAcima(){
+    public void grauAcima() throws IOException {
 
+        double[] array = ordenado;
+        int numFiles = listaFicheiros().length;
+        int[] ficheiros = new int[numFiles];
         Scanner input = new Scanner(System.in);
+        int i = numFiles - 1;
+        double value;
+        System.out.println("\n \nIntroduza o grau maximo de similariedade a  encontrar: \n");
+        value = Double.parseDouble(input.nextLine());
 
-        System.out.println("\n \nIntroduza o grau máximo de Similariedade a  encontrar: \n");
-        String p = input.next();
+        System.out.println("Ficheiros com grau superior a " + value + "\n");
+
+        while (array[i] > value) {
+            System.out.println("Grau similariedade do documento = " + array[i]);
+            if (i == 0) {
+                break;
+            }
+            i--;
+        }
 
 
-    }*/
+    }
 
-    /*public double[] maximoFicheiros(){
+    public void maximoFicheiros() throws IOException {
 
+        double[] array = ordenado;
         Scanner input = new Scanner(System.in);
+        int numFiles = listaFicheiros().length;
+        System.out.println("\n \nIntroduza o maximo de ficheiros a pesquisar similariedade: \n");
+        int p = input.nextInt();
 
-        System.out.println("\n \nIntroduza o máximo de ficheiros a pesquisar similariedade: \n");
-        String p = input.next();
+        for (int i = numFiles - 1; i >= (numFiles - p); i--) {
+            System.out.println("Grau similariedade do documento = " + array[i]);
+        }
 
-    }*/
-
+    }
 
 }

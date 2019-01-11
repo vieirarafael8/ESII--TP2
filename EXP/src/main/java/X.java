@@ -15,6 +15,9 @@ public class X {
        //t.grauSimilariedade();
        t.ordenado();
 
+       t.grauAcima();
+       t.maximoFicheiros();
+
 
 
     }
