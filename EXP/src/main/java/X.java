@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class X {
 
@@ -7,9 +8,16 @@ public class X {
 
         Tratamento t = new Tratamento();
 
-        t.tratamentoPalavras();
+        t.tratamentoPalavras(t.listaFicheiros(t.file).length);
         t.imprimirMatriz();
-        t.matrizQ();
+
+        //ARRAY DESORNEDAO
+       //t.grauSimilariedade();
+       t.ordenado(t.listaFicheiros(t.file).length);
+
+       t.grauAcima(t.listaFicheiros(t.file).length,t.ordenado);
+       t.maximoFicheiros(t.listaFicheiros(t.file).length, t.ordenado);
+
 
 
     }
