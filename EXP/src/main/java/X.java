@@ -15,7 +15,7 @@ public class X {
        //t.grauSimilariedade();
        t.ordenado(t.listaFicheiros(t.file).length);
 
-       t.grauAcima(t.listaFicheiros(t.file).length,t.ordenado);
+       t.grauAcima(t.listaFicheiros(t.file).length);
        t.maximoFicheiros(t.listaFicheiros(t.file).length, t.ordenado);
 
 
