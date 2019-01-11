@@ -8,15 +8,15 @@ public class X {
 
         Tratamento t = new Tratamento();
 
-        t.tratamentoPalavras();
+        t.tratamentoPalavras(t.listaFicheiros(t.file).length);
         t.imprimirMatriz();
 
         //ARRAY DESORNEDAO
        //t.grauSimilariedade();
-       t.ordenado();
+       t.ordenado(t.listaFicheiros(t.file).length);
 
-       t.grauAcima();
-       t.maximoFicheiros();
+       t.grauAcima(t.listaFicheiros(t.file).length,t.ordenado);
+       t.maximoFicheiros(t.listaFicheiros(t.file).length, t.ordenado);
 
 
 
