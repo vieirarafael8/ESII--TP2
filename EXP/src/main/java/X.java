@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class X {
 
@@ -9,7 +10,11 @@ public class X {
 
         t.tratamentoPalavras();
         t.imprimirMatriz();
-        t.grauSimilariedade();
+
+        //ARRAY DESORNEDAO
+       //t.grauSimilariedade();
+       t.ordenado();
+
 
 
     }
