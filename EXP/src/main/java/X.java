@@ -9,7 +9,7 @@ public class X {
 
         t.tratamentoPalavras();
         t.imprimirMatriz();
-        t.matrizQ();
+        t.grauSimilariedade();
 
 
     }

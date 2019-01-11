@@ -50,7 +50,7 @@ public class Tratamento {
         return src;
     }
 
-    public int[][] tratamentoPalavras() throws IOException {
+    public double[][] tratamentoPalavras() throws IOException {
 
         int numFiles = listaFicheiros().length;
         File[] f = listaFicheiros();
@@ -71,7 +71,7 @@ public class Tratamento {
                 }
             }
         }
-        int[][] matriz = new int[numFiles][palavra.size()];
+        double[][] matriz = new double[numFiles][palavra.size()];
         palavras = palavra.toArray(new String[0]);
 
         for (int k = 0; k < numFiles; k++) {
@@ -98,7 +98,7 @@ public class Tratamento {
 
     public void imprimirMatriz() throws IOException {
 
-        int[][] matriz = tratamentoPalavras();
+        double[][] matriz = tratamentoPalavras();
 
         int numFiles = listaFicheiros().length;
         System.out.println();
@@ -112,23 +112,30 @@ public class Tratamento {
             System.out.println();
             for (int i = 0; i < palavra.size(); i++) {
                 System.out.print(matriz[k][i] + "\t|\t");
-
             }
         }
         System.out.println();
     }
 
 
-    public void matrizQ() throws IOException {
+    public int countforQ() {
 
         int numFiles = listaFicheiros().length;
         int countforQ = 0;
-        File[] f = listaFicheiros();
         for (int k = 0; k < numFiles; k++) {
             for (int i = 0; i < palavra.size(); i++) {
                 countforQ++;
             }
         }
+        return countforQ;
+    }
+
+
+    public double[] matrizQ() throws IOException {
+
+        int numFiles = listaFicheiros().length;
+
+        File[] f = listaFicheiros();
 
         Scanner input = new Scanner(System.in);
 
@@ -165,29 +172,64 @@ public class Tratamento {
         System.out.println("|-----------------|");
         System.out.println("|    Matriz Q:    |");
         System.out.println("|-----------------|");
-        double[] matrizQ = new double[countforQ];
-        int[][] matriz = tratamentoPalavras();
-        int j=0;
+        double[] matrizQ = new double[countforQ()];
+        double[][] matriz = tratamentoPalavras();
+        int j = 0;
         double numeroFicheiro = numFiles;
 
-            if (countP != 0) {
-                for (int k = 0; k < numFiles; k++) {
-                    for (int i = 0; i < palavra.size(); i++) {
-                        matrizQ[j] = (matriz[k][i] * (1 + Math.log10(numeroFicheiro / countP)));
-                        j++;
+        if (countP != 0) {
+            for (int k = 0; k < numFiles; k++) {
+                for (int i = 0; i < palavra.size(); i++) {
+                    matrizQ[j] = (matriz[k][i] * (1 + Math.log10(numeroFicheiro / countP)));
 
-                    }
+                    j++;
                 }
 
-            } else {
-                System.out.println("\nA palavra indicada não se encontra em nenhum documento!");
             }
 
-        for(int l=0; l<matrizQ.length; l++){
-            System.out.println(matrizQ[l]);
-        }
+        } else {
+            System.out.println("\nA palavra indicada não se encontra em nenhum documento!");
         }
 
+        for (int l = 0; l < matrizQ.length; l++) {
+            System.out.println(matrizQ[l]);
+        }
+
+        return matrizQ;
+    }
+
+    public void grauSimilariedade() throws IOException {
+
+        int numFiles = listaFicheiros().length;
+        double somadeCima = 0, somadeQ = 0, somadeM = 0;
+        double[][] matriz = tratamentoPalavras();
+        int j = 0;
+        double[] grauSim = new double[numFiles];
+        double[] matrizQ = matrizQ();
+
+        for (int k = 0; k < numFiles; k++) {
+            for (int i = 0; i < palavra.size(); i++) {
+
+                somadeCima += (matriz[k][i] * matrizQ[j]);
+                somadeM += Math.pow(matriz[k][i], 2);
+                somadeQ += Math.pow(matrizQ[j], 2);
+
+                j++;
+            }
+            grauSim[k] = somadeCima / ((Math.sqrt(somadeM)) * (Math.sqrt(somadeQ)));
+            somadeCima = 0;
+            somadeM = 0;
+            somadeQ = 0;
+        }
+
+        System.out.println();
+        for (int k = 0; k < numFiles; k++) {
+
+            System.out.println("Grau de similariedade com o documento " + (k + 1) + " = " + grauSim[k]);
+
+        }
+
+    }
 
 
 }
