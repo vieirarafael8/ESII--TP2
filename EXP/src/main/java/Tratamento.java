@@ -1,9 +1,9 @@
+
+
 import javax.swing.text.html.parser.Parser;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedHashSet;
-import java.util.Scanner;
+import java.util.*;
+
 
 public class Tratamento {
 
@@ -13,10 +13,8 @@ public class Tratamento {
     double[] docs = new double[listaFicheiros(file).length];
     LinkedHashSet<String> palavra = new LinkedHashSet<>();
     double[] ordenado = new double[listaFicheiros(file).length];
-
-
-
-
+    public static boolean ASC = true;
+    public static boolean DESC = false;
     public File[] listaFicheiros(File file) {
 
         FilenameFilter textFilter = new FilenameFilter() {
@@ -212,9 +210,9 @@ public class Tratamento {
         }
     }
 
-    public double[] grauSimilariedade(int numFiles, double[][] matrizM,  double[] matrizQ) throws IOException {
+    public double[] grauSimilariedade(int numFiles, double[][] matrizM, double[] matrizQ) throws IOException {
 
-        if(numFiles>0 && matrizM!=null && matrizQ!=null) {
+        if (numFiles > 0 && matrizM != null && matrizQ != null) {
 
             double somadeCima = 0, somadeQ = 0, somadeM = 0;
             int j = 0;
@@ -237,33 +235,81 @@ public class Tratamento {
             System.out.println();
             System.out.println("Desordenado: \n");
 
+
             for (int k = 0; k < numFiles; k++) {
-                docs[k] = grauSim[k];
-                System.out.println("Grau de similariedade com o documento " + (k + 1) + " = " + grauSim[k]);
+
+                System.out.println("Grau de similariedade com o documento " + listaFicheiros(file)[k].getName() + " = " + grauSim[k]);
+
             }
             return grauSim;
-        }
-        else{
+        } else {
             return null;
         }
     }
 
-    public double[] ordenado(int numFiles) throws IOException {
+    public String[] guardarNomes() {
 
-        if(numFiles>0) {
+        String[] nomes = new String[listaFicheiros(file).length];
+
+        for (int i = 0; i < listaFicheiros(file).length; i++) {
+            nomes[i] = listaFicheiros(file)[i].getName();
+        }
+
+        return nomes;
+    }
+
+    private static Map<String, Double> sortByComparator(Map<String, Double> unsortMap, final boolean order) {
+
+        List<Map.Entry<String, Double>> list = new LinkedList<Map.Entry<String, Double>>(unsortMap.entrySet());
+
+        // Sorting the list based on values
+        Collections.sort(list, new Comparator<Map.Entry<String, Double>>() {
+            public int compare(Map.Entry<String, Double> o1,
+                               Map.Entry<String, Double> o2) {
+                if (order) {
+                    return o1.getValue().compareTo(o2.getValue());
+                } else {
+                    return o2.getValue().compareTo(o1.getValue());
+
+                }
+            }
+        });
+
+        // Maintaining insertion order with the help of LinkedList
+        Map<String, Double> sortedMap = new LinkedHashMap<String, Double>();
+        for (Map.Entry<String, Double> entry : list) {
+            sortedMap.put(entry.getKey(), entry.getValue());
+        }
+
+        return sortedMap;
+    }
+
+
+
+    public Map<String, Double> ordenado(int numFiles) throws IOException {
+
+        if (numFiles > 0) {
 
             ordenado = grauSimilariedade(numFiles, tratamentoPalavras(numFiles), matrizQ(numFiles, listaFicheiros(file), tratamentoPalavras(numFiles)));
             System.out.println();
             System.out.println("Ordenado:\n");
 
-            Arrays.sort(ordenado);
+
+            Map< String, Double> hash = new HashMap<>();
 
             for (int i = numFiles - 1; i >= 0; i--) {
-                System.out.println("Grau similariedade do documento = " + ordenado[i]);
+                hash.put(listaFicheiros(file)[i].getName(), ordenado[i]);
             }
-            return ordenado;
-        }
-        else{
+
+            Map<String, Double> sortedMapDesc = sortByComparator(hash, DESC);
+
+            for (Map.Entry<String, Double> entry : sortedMapDesc.entrySet())
+            {
+                System.out.println("O Documento " + entry.getKey() + " tem um grau de Similariedade de "+ entry.getValue());
+            }
+
+            return sortedMapDesc;
+        } else {
             return null;
         }
     }
@@ -271,51 +317,67 @@ public class Tratamento {
 
     public int[] grauAcima(int numFiles, double[] ordenado) throws IOException {
 
-        if(numFiles>0 && ordenado!=null) {
+        if (numFiles > 0 && ordenado != null) {
             int[] ficheiros = new int[numFiles];
 
             Scanner input = new Scanner(System.in);
 
-            int i = numFiles - 1;
             double value;
-            System.out.println("\n \nIntroduza o grau maximo de similariedade a  encontrar: \n");
+            System.out.println("\n \nIntroduza o grau minimo de similariedade a  encontrar: \n");
             value = Double.parseDouble(input.nextLine());
 
             System.out.println("Ficheiros com grau superior a " + value + "\n");
 
-            while (ordenado[i] > value) {
-                System.out.println("Grau similariedade do documento = " + ordenado[i]);
-                if (i == 0) {
-                    break;
-                }
-                i--;
+            Map< String, Double> hash = new HashMap<>();
+
+            for (int i = numFiles - 1; i >= 0; i--) {
+                hash.put(listaFicheiros(file)[i].getName(), ordenado[i]);
             }
 
+            Map<String, Double> sortedMapDesc = sortByComparator(hash, DESC);
+int i=0;
+                for (Map.Entry<String, Double> entry : sortedMapDesc.entrySet())
+                {
+                    if(entry.getValue()>value) {
+                        System.out.println("O Documento " + entry.getKey() + " tem um grau de Similariedade de " + entry.getValue());
+                    }
+                }
+
             return ficheiros;
-        }
-        else{
+        } else {
             return null;
         }
     }
 
     public int[] maximoFicheiros(int numFiles, double[] ordenado) throws IOException {
 
-        if(numFiles>0 && ordenado!=null) {
-            
+        if (numFiles > 0 && ordenado != null) {
+
             int[] ficheiros = new int[numFiles];
 
             Scanner input = new Scanner(System.in);
 
             System.out.println("\n \nIntroduza o maximo de ficheiros a pesquisar similariedade: \n");
             int p = input.nextInt();
+            Map< String, Double> hash = new HashMap<>();
 
-            for (int i = numFiles - 1; i >= (numFiles - p); i--) {
-                System.out.println("Grau similariedade do documento = " + ordenado[i]);
+            for (int i = numFiles - 1; i >= 0; i--) {
+                hash.put(listaFicheiros(file)[i].getName(), ordenado[i]);
             }
 
+            Map<String, Double> c = sortByComparator(hash, DESC);
+            int i =0;
+            for (Map.Entry<String, Double> entry : c.entrySet())
+            {
+                if(i<p)
+                    System.out.println("O Documento " + entry.getKey() + " tem um grau de Similariedade de " + entry.getValue());
+                i++;
+                }
+
+
+
             return ficheiros;
-        }
-        else{
+        } else {
             return null;
         }
     }
