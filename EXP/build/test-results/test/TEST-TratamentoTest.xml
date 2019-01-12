@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="TratamentoTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2019-01-12T00:05:16" hostname="LAPTOP-1NOQIVGR" time="0.007">
+<testsuite name="TratamentoTest" tests="9" skipped="0" failures="0" errors="0" timestamp="2019-01-12T00:54:03" hostname="LAPTOP-1NOQIVGR" time="0.009">
   <properties/>
-  <testcase name="tratamentoPalavras" classname="TratamentoTest" time="0.001"/>
+  <testcase name="tratamentoPalavras" classname="TratamentoTest" time="0.0"/>
   <testcase name="grauAcima" classname="TratamentoTest" time="0.0"/>
   <testcase name="remove" classname="TratamentoTest" time="0.0"/>
   <testcase name="matrizQ" classname="TratamentoTest" time="0.0"/>
@@ -9,7 +9,7 @@
   <testcase name="countforQ" classname="TratamentoTest" time="0.0"/>
   <testcase name="maximoFicheiros" classname="TratamentoTest" time="0.0"/>
   <testcase name="grauSimilariedade" classname="TratamentoTest" time="0.0"/>
-  <testcase name="isFound" classname="TratamentoTest" time="0.001"/>
+  <testcase name="isFound" classname="TratamentoTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
