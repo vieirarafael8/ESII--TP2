@@ -7,6 +7,7 @@ import java.util.*;
 
 public class Tratamento {
 
+
     char[] delete = {'\n', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
     String[] palavras;
     File file = new File("C:\\Users\\vieir\\Documents\\GitHub\\ESII--TP2\\EXP");
@@ -15,8 +16,6 @@ public class Tratamento {
     double[] ordenado = new double[listaFicheiros(file).length];
     public static boolean ASC = true;
     public static boolean DESC = false;
-
-
 
 
     public File[] listaFicheiros(File file) {
