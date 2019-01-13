@@ -10,7 +10,7 @@ public class Tratamento {
 
     char[] delete = {'\n', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
     String[] palavras;
-    File file = new File("C:\\Users\\vieir\\Documents\\GitHub\\ESII--TP2\\EXP");
+    File file = new File("C:\\Users\\Eu\\Documents\\GitHub\\ESII--TP2\\EXP");
     double[] docs = new double[listaFicheiros(file).length];
     LinkedHashSet<String> palavra = new LinkedHashSet<>();
     double[] ordenado = new double[listaFicheiros(file).length];
@@ -34,12 +34,13 @@ public class Tratamento {
 
     public char isFound(char src) {
 
-        for (int i = 0; i < delete.length; i++) {
-            if (src == delete[i]) {
-                return '\0';
+
+            for (int i = 0; i < delete.length; i++) {
+                if (src == delete[i]) {
+                    return '\0';
+                }
             }
-        }
-        return src;
+            return src;
     }
 
     public String remove(String src) {
@@ -149,7 +150,7 @@ public class Tratamento {
     }
 
 
-    public double[] matrizQ(int numFiles, File[] f, double[][] matrizM) throws IOException {
+    public double[] matrizQ(int numFiles, File[] f, double[][] matrizM)  throws IOException {
 
         if (numFiles > 0 && f != null && matrizM != null) {
 
