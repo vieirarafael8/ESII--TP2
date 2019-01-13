@@ -10,13 +10,16 @@ public class Tratamento {
 
     char[] delete = {'\n', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
     String[] palavras;
-    File file = new File("C:\\Users\\Eu\\Documents\\GitHub\\ESII--TP2\\EXP");
+    File file = new File("C:\\Users\\EU\\Documents\\GitHub\\ESII--TP2\\EXP");
     double[] docs = new double[listaFicheiros(file).length];
     LinkedHashSet<String> palavra = new LinkedHashSet<>();
     double[] ordenado = new double[listaFicheiros(file).length];
     public static boolean ASC = true;
     public static boolean DESC = false;
 
+    /*
+    Metodo Para Listar Ficheiros
+     */
 
     public File[] listaFicheiros(File file) {
 
@@ -32,6 +35,10 @@ public class Tratamento {
         return files;
     }
 
+    /*
+    Metodo Para
+     */
+
     public char isFound(char src) {
 
 
@@ -43,6 +50,9 @@ public class Tratamento {
             return src;
     }
 
+    /*
+    Metodo Para Remover Caracteres
+     */
     public String remove(String src) {
 
         char[] srcArr = src.toCharArray();
@@ -61,6 +71,9 @@ public class Tratamento {
     }
 
 
+    /*
+    Metodo Para Criar Matriz
+     */
     public double[][] tratamentoPalavras(int numFiles) throws IOException {
 
         if (numFiles > 0) {
@@ -110,6 +123,9 @@ public class Tratamento {
         }
     }
 
+    /*
+    Metodo Para Imprimir a Matriz
+     */
 
     public void imprimirMatriz() throws IOException {
 
@@ -132,7 +148,9 @@ public class Tratamento {
         System.out.println();
     }
 
-
+    /*
+        Metodo Para Contar Palavras Para a Matriz
+         */
     public int countforQ(int numFiles) {
 
         if (numFiles > 0) {
@@ -149,7 +167,9 @@ public class Tratamento {
         }
     }
 
-
+    /*
+        Metodo Para Procurar Palavra Na Matriz
+         */
     public double[] matrizQ(int numFiles, File[] f, double[][] matrizM)  throws IOException {
 
         if (numFiles > 0 && f != null && matrizM != null) {
@@ -214,6 +234,9 @@ public class Tratamento {
         }
     }
 
+    /*
+    Metodo Para Verificar o Grau de Similariedade Das Palavras
+     */
     public double[] grauSimilariedade(int numFiles, double[][] matrizM, double[] matrizQ) throws IOException {
 
         if (numFiles > 0 && matrizM != null && matrizQ != null) {
@@ -250,7 +273,9 @@ public class Tratamento {
             return null;
         }
     }
-
+    /*
+        Metodo Para
+         */
     private static Map<String, Double> sortByComparator(Map<String, Double> unsortMap, final boolean order) {
 
         List<Map.Entry<String, Double>> list = new LinkedList<Map.Entry<String, Double>>(unsortMap.entrySet());
@@ -302,6 +327,9 @@ public class Tratamento {
         }
     }
 
+    /*
+    Metodo Para Introdução Do Grau De Similariedade A Pesquisar
+     */
 
     public String[] grauAcima(int numFiles) {
 
@@ -340,6 +368,10 @@ public class Tratamento {
             return null;
         }
     }
+
+    /*
+    Metodo Para Introdução Do Máximo de Ficheiros A Apresentar
+     */
 
     public String[] maximoFicheiros(int numFiles, double[] ordenado) {
 
