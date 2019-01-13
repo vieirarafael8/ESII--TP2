@@ -36,7 +36,7 @@ public class Tratamento {
     }
 
     /*
-    Metodo Para
+    Metodo Para Encontrar Caracteres Especiais
      */
 
     public char isFound(char src) {
@@ -72,7 +72,7 @@ public class Tratamento {
 
 
     /*
-    Metodo Para Criar Matriz
+    Metodo Para Criar Matriz Principal
      */
     public double[][] tratamentoPalavras(int numFiles) throws IOException {
 
@@ -149,7 +149,7 @@ public class Tratamento {
     }
 
     /*
-        Metodo Para Contar Palavras Para a Matriz
+        Metodo Para Contar Palavras Do Array de Palavras Para a MatrizQ
          */
     public int countforQ(int numFiles) {
 
@@ -168,7 +168,7 @@ public class Tratamento {
     }
 
     /*
-        Metodo Para Procurar Palavra Na Matriz
+        Metodo Para Procurar Palavra Na MatrizM E Construir MatrizQ
          */
     public double[] matrizQ(int numFiles, File[] f, double[][] matrizM)  throws IOException {
 
@@ -235,7 +235,7 @@ public class Tratamento {
     }
 
     /*
-    Metodo Para Verificar o Grau de Similariedade Das Palavras
+    Metodo Para Verificar o Grau de Similariedade Dos Docuumentos
      */
     public double[] grauSimilariedade(int numFiles, double[][] matrizM, double[] matrizQ) throws IOException {
 
@@ -274,7 +274,7 @@ public class Tratamento {
         }
     }
     /*
-        Metodo Para
+        Metodo Para Ordenar Palavras ListaMap
          */
     private static Map<String, Double> sortByComparator(Map<String, Double> unsortMap, final boolean order) {
 
@@ -302,7 +302,9 @@ public class Tratamento {
         return sortedMap;
     }
 
-
+    /*
+         Metodo Para Ordenar A MatrizQ
+          */
     public Map<String, Double> ordenado(int numFiles) throws IOException {
 
         if (numFiles > 0) {
@@ -328,7 +330,7 @@ public class Tratamento {
     }
 
     /*
-    Metodo Para Introdução Do Grau De Similariedade A Pesquisar
+    Metodo Para Listar Documentos Com Grau de Similariedade Superior Ao Dado Por Input
      */
 
     public String[] grauAcima(int numFiles) {
