@@ -17,12 +17,8 @@ public class Tratamento {
     public static boolean ASC = true;
     public static boolean DESC = false;
 
-
-
-    /**
-     * Metodo Para Listar Ficheiros
-     * @param file
-     * @return
+    /*
+    Metodo Para Listar Ficheiros
      */
 
     public File[] listaFicheiros(File file) {
@@ -39,12 +35,8 @@ public class Tratamento {
         return files;
     }
 
-
-
-    /**
-     *  Metodo Para Encontrar Caracteres Especiais
-     * @param src
-     * @return
+    /*
+    Metodo Para Encontrar Caracteres Especiais
      */
 
     public char isFound(char src) {
@@ -58,12 +50,8 @@ public class Tratamento {
             return src;
     }
 
-
-
-    /**
-     * Metodo Para Remover Caracteres
-     * @param src
-     * @return
+    /*
+    Metodo Para Remover Caracteres
      */
     public String remove(String src) {
 
@@ -83,13 +71,8 @@ public class Tratamento {
     }
 
 
-
-
-    /**
-     *  Metodo Para Criar Matriz Principal
-     * @param numFiles
-     * @return
-     * @throws IOException
+    /*
+    Metodo Para Criar Matriz Principal
      */
     public double[][] tratamentoPalavras(int numFiles) throws IOException {
 
@@ -140,12 +123,10 @@ public class Tratamento {
         }
     }
 
-
-
-    /**
-     *  Metodo Para Imprimir a Matriz
-     * @throws IOException
+    /*
+    Metodo Para Imprimir a Matriz
      */
+
     public void imprimirMatriz() throws IOException {
 
 
@@ -167,13 +148,9 @@ public class Tratamento {
         System.out.println();
     }
 
-
-
-    /**
-     * Metodo Para Contar Palavras Do Array de Palavras Para a MatrizQ
-     * @param numFiles
-     * @return
-     */
+    /*
+        Metodo Para Contar Palavras Do Array de Palavras Para a MatrizQ
+         */
     public int countforQ(int numFiles) {
 
         if (numFiles > 0) {
@@ -190,16 +167,9 @@ public class Tratamento {
         }
     }
 
-
-
-    /**
-     *  Metodo Para Procurar Palavra Na MatrizM E Construir MatrizQ
-     * @param numFiles
-     * @param f
-     * @param matrizM
-     * @return
-     * @throws IOException
-     */
+    /*
+        Metodo Para Procurar Palavra Na MatrizM E Construir MatrizQ
+         */
     public double[] matrizQ(int numFiles, File[] f, double[][] matrizM)  throws IOException {
 
         if (numFiles > 0 && f != null && matrizM != null) {
@@ -264,15 +234,8 @@ public class Tratamento {
         }
     }
 
-
-
-    /**
-     * Metodo Para Verificar o Grau de Similariedade Dos Docuumentos
-     * @param numFiles
-     * @param matrizM
-     * @param matrizQ
-     * @return
-     * @throws IOException
+    /*
+    Metodo Para Verificar o Grau de Similariedade Dos Docuumentos
      */
     public double[] grauSimilariedade(int numFiles, double[][] matrizM, double[] matrizQ) throws IOException {
 
@@ -310,13 +273,9 @@ public class Tratamento {
             return null;
         }
     }
-
-    /**
-     * Metodo Para Ordenar Palavras ListaMap
-     * @param unsortMap
-     * @param order
-     * @return
-     */
+    /*
+        Metodo Para Ordenar Palavras ListaMap
+         */
     private static Map<String, Double> sortByComparator(Map<String, Double> unsortMap, final boolean order) {
 
         List<Map.Entry<String, Double>> list = new LinkedList<Map.Entry<String, Double>>(unsortMap.entrySet());
@@ -343,14 +302,9 @@ public class Tratamento {
         return sortedMap;
     }
 
-
-
-    /**
-     *  Metodo Para Ordenar A MatrizQ
-     * @param numFiles
-     * @return
-     * @throws IOException
-     */
+    /*
+         Metodo Para Ordenar A MatrizQ
+          */
     public Map<String, Double> ordenado(int numFiles) throws IOException {
 
         if (numFiles > 0) {
@@ -375,12 +329,8 @@ public class Tratamento {
         }
     }
 
-
-
-    /**
-     * Metodo Para Listar Documentos Com Grau de Similariedade Superior Ao Dado Por Input
-     * @param numFiles
-     * @return
+    /*
+    Metodo Para Listar Documentos Com Grau de Similariedade Superior Ao Dado Por Input
      */
 
     public String[] grauAcima(int numFiles) {
@@ -421,13 +371,10 @@ public class Tratamento {
         }
     }
 
-
-    /**
-     * Metodo Para Introdução Do Máximo de Ficheiros A Apresentar
-     * @param numFiles
-     * @param ordenado
-     * @return
+    /*
+    Metodo Para Introdução Do Máximo de Ficheiros A Apresentar
      */
+
     public String[] maximoFicheiros(int numFiles, double[] ordenado) {
 
         if (numFiles > 0 &&ordenado!=null) {
