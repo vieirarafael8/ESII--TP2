@@ -16,6 +16,8 @@ public class Tratamento {
     double[] ordenado = new double[listaFicheiros(file).length];
     public static boolean ASC = true;
     public static boolean DESC = false;
+    String pp = new String();
+    Scanner input = new Scanner(System.in);
 
     /*
     Metodo Para Listar Ficheiros
@@ -149,7 +151,7 @@ public class Tratamento {
     }
 
     /*
-        Metodo Para Contar Palavras Do Array de Palavras Para a MatrizQ
+        Metodo Para Contar Palavras do array de palavras para matriz Q
          */
     public int countforQ(int numFiles) {
 
@@ -170,14 +172,16 @@ public class Tratamento {
     /*
         Metodo Para Procurar Palavra Na MatrizM E Construir MatrizQ
          */
-    public double[] matrizQ(int numFiles, File[] f, double[][] matrizM)  throws IOException {
+    public double[] matrizQ(int numFiles, File[] f, double[][] matrizM, Scanner scan)  throws IOException {
 
-        if (numFiles > 0 && f != null && matrizM != null) {
+        if (numFiles > 0 && f != null && matrizM != null && scan!=null) {
 
-            Scanner input = new Scanner(System.in);
+            input = new Scanner(System.in);
+            input =scan;
 
             System.out.println("\n \nIntroduza a palavra a pesquisar: \n");
-            String p = input.next();
+
+            pp = input.next();
 
             //CALCULAR
             int countPp = 0;
@@ -190,7 +194,7 @@ public class Tratamento {
                         for (int i = 0; i < palavra.size(); i++) {
                             countPp = 0;
                             for (String element : linha.split(" ")) {
-                                if (element.compareTo(p) == 0) countPp++;
+                                if (element.compareTo(pp) == 0) countPp++;
                             }
 
                         }
@@ -202,7 +206,7 @@ public class Tratamento {
                 }
             }
 
-            System.out.println("\nA palavra " + p + " esta presente em " + countP + " ficheiros \n");
+            System.out.println("\nA palavra " + pp + " esta presente em " + countP + " ficheiros \n");
 
             //IMPRIMIR MATRIZ Q COM PRIMEIRA FORMULA APLICADA
             System.out.println("|-----------------|");
@@ -309,7 +313,7 @@ public class Tratamento {
 
         if (numFiles > 0) {
 
-            ordenado = grauSimilariedade(numFiles, tratamentoPalavras(numFiles), matrizQ(numFiles, listaFicheiros(file), tratamentoPalavras(numFiles)));
+            ordenado = grauSimilariedade(numFiles, tratamentoPalavras(numFiles), matrizQ(numFiles, listaFicheiros(file), tratamentoPalavras(numFiles),input));
             System.out.println();
             System.out.println("Ordenado:\n");
 
@@ -373,6 +377,8 @@ public class Tratamento {
 
     /*
     Metodo Para Introdução Do Máximo de Ficheiros A Apresentar
+
+
      */
 
     public String[] maximoFicheiros(int numFiles, double[] ordenado) {
