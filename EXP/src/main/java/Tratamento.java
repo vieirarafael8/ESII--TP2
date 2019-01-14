@@ -10,7 +10,7 @@ public class Tratamento {
 
     char[] delete = {'\n', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '?', '.', ';', ',', ':', '!', '-', '(', ')', '_', '/', '*', '[', ']'};
     String[] palavras;
-    File file = new File("C:\\Users\\ga\\Documents\\GitHub\\ESII--TP2\\EXP");
+    File file = new File("C:\\Users\\EU\\Documents\\GitHub\\ESII--TP2\\EXP");
     double[] docs = new double[listaFicheiros(file).length];
     LinkedHashSet<String> palavra = new LinkedHashSet<>();
     double[] ordenado = new double[listaFicheiros(file).length];
@@ -22,7 +22,7 @@ public class Tratamento {
     /**
      * Metodo Para Listar Ficheiros
      * @param file
-     * @return files
+     * @return
      */
 
     public File[] listaFicheiros(File file) {
@@ -44,7 +44,7 @@ public class Tratamento {
     /**
      *  Metodo Para Encontrar Caracteres Especiais
      * @param src
-     * @return src
+     * @return
      */
 
     public char isFound(char src) {
@@ -63,7 +63,7 @@ public class Tratamento {
     /**
      * Metodo Para Remover Caracteres
      * @param src
-     * @return sb.toString() if srcArr.length >0, or null if srcArr.length<=0
+     * @return
      */
     public String remove(String src) {
 
@@ -88,7 +88,7 @@ public class Tratamento {
     /**
      *  Metodo Para Criar Matriz Principal
      * @param numFiles
-     * @return matrizM if numFiles >0 or null if numFiles <=0
+     * @return
      * @throws IOException
      */
     public double[][] tratamentoPalavras(int numFiles) throws IOException {
@@ -172,7 +172,7 @@ public class Tratamento {
     /**
      * Metodo Para Contar Palavras Do Array de Palavras Para a MatrizQ
      * @param numFiles
-     * @return counterforQ if palavra.size>0 or -1 if palavra.size<=0
+     * @return
      */
     public int countforQ(int numFiles) {
 
@@ -197,7 +197,7 @@ public class Tratamento {
      * @param numFiles
      * @param f
      * @param matrizM
-     * @return matrizQ if  matrizQ>1 or null if matrizQ<=1
+     * @return
      * @throws IOException
      */
     public double[] matrizQ(int numFiles, File[] f, double[][] matrizM)  throws IOException {
@@ -271,7 +271,7 @@ public class Tratamento {
      * @param numFiles
      * @param matrizM
      * @param matrizQ
-     * @return grauSim if numFiles > 0 && matrizM != null && matrizQ != null or null if one of them = 0
+     * @return
      * @throws IOException
      */
     public double[] grauSimilariedade(int numFiles, double[][] matrizM, double[] matrizQ) throws IOException {
@@ -315,7 +315,7 @@ public class Tratamento {
      * Metodo Para Ordenar Palavras ListaMap
      * @param unsortMap
      * @param order
-     * @return sortedMap
+     * @return
      */
     private static Map<String, Double> sortByComparator(Map<String, Double> unsortMap, final boolean order) {
 
@@ -348,7 +348,7 @@ public class Tratamento {
     /**
      *  Metodo Para Ordenar A MatrizQ
      * @param numFiles
-     * @return sortedMapDesc if numFiles > 0 or null if numFiles <= 0
+     * @return
      * @throws IOException
      */
     public Map<String, Double> ordenado(int numFiles) throws IOException {
@@ -380,7 +380,7 @@ public class Tratamento {
     /**
      * Metodo Para Listar Documentos Com Grau de Similariedade Superior Ao Dado Por Input
      * @param numFiles
-     * @return ficheiros if numFiles > 0 or null numFiles <= 0
+     * @return
      */
 
     public String[] grauAcima(int numFiles) {
@@ -426,7 +426,7 @@ public class Tratamento {
      * Metodo Para Introdução Do Máximo de Ficheiros A Apresentar
      * @param numFiles
      * @param ordenado
-     * @return ficheiros if numFiles > 0 &&ordenado!=null or null if one of them = 0
+     * @return
      */
     public String[] maximoFicheiros(int numFiles, double[] ordenado) {
 
