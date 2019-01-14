@@ -3,7 +3,9 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 import static org.junit.Assert.*;
 
@@ -78,10 +80,10 @@ public class TratamentoTest {
 
     }
 
-    @Test
-    public void matrizQ() throws IOException, NoSuchElementException {
+    @Test(expected = NoSuchElementException.class)
+    public void matrizQ() throws IOException {
 
-       /* Tratamento t = new Tratamento();
+        Tratamento t = new Tratamento();
         int numFiles = 1;
         int numFiles1 = 0;
 
@@ -91,44 +93,103 @@ public class TratamentoTest {
         double[][] matrizM = new double[1][1];
         double[][] matrizM1 = null;
 
-        String p = "cenas";
-        String p1 = null;
+        String p= "cenas";
+        String p1= "";
 
-        double[] result = t.matrizQ(numFiles,f,matrizM,p);
-        double[] result1 = t.matrizQ(numFiles1,f,matrizM,p);
-        double[] result2 = t.matrizQ(numFiles,f1,matrizM,p);
-        double[] result3 = t.matrizQ(numFiles,f,matrizM1,p);
-        double[] result4 = t.matrizQ(numFiles,f,matrizM,p1);
+        double[] result = t.matrizQ(numFiles,f,matrizM, new Scanner(p));
+        double[] result1 = t.matrizQ(numFiles1,f,matrizM,new Scanner(p));
+        double[] result2 = t.matrizQ(numFiles,f1,matrizM, new Scanner(p));
+        double[] result3 = t.matrizQ(numFiles,f,matrizM1, new Scanner(p));
+        double[] result4 = t.matrizQ(numFiles,f,matrizM, new Scanner(p1));
 
         assertNotNull(result);
         assertNull(result1);
         assertNull(result2);
         assertNull(result3);
-        assertNull(result4);*/
+        assertNull(result4);
 
     }
 
     @Test
-    public void grauSimilariedade() {
+    public void grauSimilariedade() throws IOException{
+
+       Tratamento t = new Tratamento();
+
+        int numFiles = 1;
+        int numFiles1 = 0;
+
+        double[][] matrizM = new double[numFiles][numFiles];
+        double[][] matrizM1 = null;
+
+        double[] matrizQ = new double[numFiles];
+        double[] matrizQ1 = null;
+
+        double[] result = t.grauSimilariedade(numFiles, matrizM, matrizQ);
+        double[] result1 = t.grauSimilariedade(numFiles1, matrizM, matrizQ);
+        double[] result2 = t.grauSimilariedade(numFiles, matrizM1, matrizQ);
+        double[] result3 = t.grauSimilariedade(numFiles, matrizM, matrizQ1);
+
+        assertNotNull(result);
+        assertNull(result1);
+        assertNull(result2);
+        assertNull(result3);
+
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void ordenado() throws IOException{
+
+        Tratamento t = new Tratamento();
+
+        int numFiles = 1;
+        int numFiles1 = 0;
+
+        Map<String, Double> result = t.ordenado(numFiles);
+        Map<String, Double> result1 = t.ordenado(numFiles1);
+
+        assertNotNull(result);
+        assertNull(result1);
+
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void grauAcima(){
+        Tratamento t = new Tratamento();
+
+        int numFiles = 1;
+        int numFiles1 = 0;
+
+        String[] result = t.grauAcima(numFiles);
+
+        String[] result1 = t.grauAcima(numFiles1);
+
+        assertNotNull(result);
+        assertNull(result1);
 
 
     }
 
-    @Test
-    public void ordenado() {
-
-
-    }
-
-    @Test
-    public void grauAcima() {
-
-
-    }
-
-    @Test
+    @Test(expected = NoSuchElementException.class)
     public void maximoFicheiros() {
 
+        Tratamento t = new Tratamento();
+
+
+        int numFiles = 1;
+        int numFiles1 = 0;
+
+        double[] ordenado = new double[numFiles];
+        double[] ordenado1 = new double[numFiles1];
+
+
+        String[] result = t.maximoFicheiros(numFiles, ordenado);
+        String[] result1 = t.maximoFicheiros(numFiles, ordenado1);
+
+
+        assertNotNull(result);
+        assertNull(result1);
 
     }
+
+
 }

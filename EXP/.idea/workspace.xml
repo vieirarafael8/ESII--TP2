@@ -4,7 +4,12 @@
     <list default="true" id="b056c39d-4be4-4d49-8dd2-468221c9f91f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Tratamento$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Tratamento$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/Tratamento.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/X.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Tratamento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Tratamento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/TratamentoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/TratamentoTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -16,9 +21,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/EXP$X.ic" NAME="X Coverage Results" MODIFIED="1546904445934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/EXP$TratamentoTest.ic" NAME="TratamentoTest Coverage Results" MODIFIED="1547424542238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
     <SUITE FILE_PATH="coverage/EXP$TratamentoTest_matrizQ.ic" NAME="TratamentoTest.matrizQ Coverage Results" MODIFIED="1547343667496" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/EXP$TratamentoTest.ic" NAME="TratamentoTest Coverage Results" MODIFIED="1547343736612" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/EXP$X.ic" NAME="X Coverage Results" MODIFIED="1546904445934" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="CoverageViewManager">
     <option name="myElementSize" value="165" />
@@ -28,21 +33,25 @@
       <ProjectState />
     </projectState>
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="-1885952904">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="1" />
-          <entry key="project.open.time.2" value="1" />
-          <entry key="project.opened" value="1" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="376" />
-        </counts>
-      </usages-collector>
-    </session>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="EXP" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -61,12 +70,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/Tratamento.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+            <state relative-caret-position="3493">
+              <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#8231#8258#0" expanded="true" />
-                <element signature="e#8886#8902#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -75,8 +82,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/TratamentoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1734">
-              <caret line="102" column="30" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
+            <state relative-caret-position="-2698">
+              <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -104,22 +111,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GradleLocalSettings">
-    <option name="modificationStamps">
-      <map>
-        <entry key="$PROJECT_DIR$" value="6183281715093" />
-        <entry key="$PROJECT_DIR$/.gradle" value="0" />
-        <entry key="$PROJECT_DIR$/build.gradle" value="625407676" />
-        <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="2696189834" />
-        <entry key="$PROJECT_DIR$/settings.gradle" value="1912868499" />
-      </map>
-    </option>
-    <option name="projectSyncType">
-      <map>
-        <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
-      </map>
-    </option>
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -128,16 +119,10 @@
         <option value="$PROJECT_DIR$/src/main/java/Palavra.java" />
         <option value="$PROJECT_DIR$/src/main/java/JuntaTudo.java" />
         <option value="$PROJECT_DIR$/src/main/java/X.java" />
-        <option value="$PROJECT_DIR$/src/test/java/TratamentoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/Tratamento.java" />
+        <option value="$PROJECT_DIR$/src/test/java/TratamentoTest.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenProjectNavigator">
     <treeState>
@@ -147,7 +132,7 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-12" />
-    <option name="width" value="980" />
+    <option name="width" value="981" />
     <option name="height" value="1032" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -164,7 +149,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547344047383" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547425109414" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -195,14 +180,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.X">
-    <configuration name="X" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="X" />
-      <module name="EXP.main" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Gradle.TratamentoTest">
     <configuration name="TratamentoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -220,14 +198,15 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TratamentoTest.countforQ" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TratamentoTest.grauAcima" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;TratamentoTest.countforQ&quot;" />
+        <option name="scriptParameters" value="--tests &quot;TratamentoTest.grauAcima&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -239,14 +218,15 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TratamentoTest.matrizQ" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TratamentoTest.grauSimilariedade" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;TratamentoTest.matrizQ&quot;" />
+        <option name="scriptParameters" value="--tests &quot;TratamentoTest.grauSimilariedade&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -258,14 +238,15 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="TratamentoTest.tratamentoPalavras" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="TratamentoTest.maximoFicheiros" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="--tests &quot;TratamentoTest.tratamentoPalavras&quot;" />
+        <option name="scriptParameters" value="--tests &quot;TratamentoTest.maximoFicheiros&quot;" />
         <option name="taskDescriptions">
           <list />
         </option>
@@ -277,22 +258,43 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="TratamentoTest.ordenado" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="--tests &quot;TratamentoTest.ordenado&quot;" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":cleanTest" />
+            <option value=":test" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>false</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Application.X" />
+      <item itemvalue="Gradle.TratamentoTest.grauSimilariedade" />
+      <item itemvalue="Gradle.TratamentoTest.ordenado" />
+      <item itemvalue="Gradle.TratamentoTest.grauAcima" />
+      <item itemvalue="Gradle.TratamentoTest.maximoFicheiros" />
       <item itemvalue="Gradle.TratamentoTest" />
-      <item itemvalue="Gradle.TratamentoTest.countforQ" />
-      <item itemvalue="Gradle.TratamentoTest.matrizQ" />
-      <item itemvalue="Gradle.TratamentoTest.tratamentoPalavras" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.X" />
         <item itemvalue="Gradle.TratamentoTest" />
-        <item itemvalue="Gradle.TratamentoTest.matrizQ" />
-        <item itemvalue="Gradle.TratamentoTest.countforQ" />
-        <item itemvalue="Gradle.TratamentoTest.tratamentoPalavras" />
+        <item itemvalue="Gradle.TratamentoTest.maximoFicheiros" />
+        <item itemvalue="Gradle.TratamentoTest.grauAcima" />
+        <item itemvalue="Gradle.TratamentoTest.ordenado" />
+        <item itemvalue="Gradle.TratamentoTest.grauSimilariedade" />
       </list>
     </recent_temporary>
   </component>
@@ -325,6 +327,8 @@
       <workItem from="1547318131733" duration="1142000" />
       <workItem from="1547333878088" duration="6415000" />
       <workItem from="1547407700536" duration="735000" />
+      <workItem from="1547414317106" duration="1769000" />
+      <workItem from="1547420801132" duration="4295000" />
     </task>
     <task id="LOCAL-00001" summary="Update configurações">
       <created>1545001638434</created>
@@ -355,39 +359,39 @@
     </servers>
   </component>
   <component name="TestHistory">
-    <history-entry file="TratamentoTest - 2019.01.13 at 01h 34m 58s.xml">
-      <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TratamentoTest - 2019.01.13 at 01h 35m 24s.xml">
-      <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TratamentoTest - 2019.01.13 at 01h 35m 48s.xml">
-      <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TratamentoTest - 2019.01.13 at 01h 37m 21s.xml">
-      <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TratamentoTest - 2019.01.13 at 01h 38m 36s.xml">
-      <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TratamentoTest - 2019.01.13 at 01h 39m 19s.xml">
-      <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TratamentoTest - 2019.01.13 at 01h 40m 08s.xml">
-      <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
-    </history-entry>
-    <history-entry file="TratamentoTest_matrizQ - 2019.01.13 at 01h 41m 05s.xml">
+    <history-entry file="TratamentoTest_matrizQ - 2019.01.13 at 23h 53m 49s.xml">
       <configuration name="TratamentoTest.matrizQ" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TratamentoTest_matrizQ - 2019.01.13 at 01h 41m 28s.xml">
-      <configuration name="TratamentoTest.matrizQ" configurationId="GradleRunConfiguration" />
+    <history-entry file="TratamentoTest_grauSimilariedade - 2019.01.13 at 23h 54m 21s.xml">
+      <configuration name="TratamentoTest.grauSimilariedade" configurationId="GradleRunConfiguration" />
     </history-entry>
-    <history-entry file="TratamentoTest - 2019.01.13 at 01h 42m 30s.xml">
+    <history-entry file="TratamentoTest_ordenado - 2019.01.14 at 00h 02m 49s.xml">
+      <configuration name="TratamentoTest.ordenado" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TratamentoTest_ordenado - 2019.01.14 at 00h 03m 19s.xml">
+      <configuration name="TratamentoTest.ordenado" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TratamentoTest_grauAcima - 2019.01.14 at 00h 05m 15s.xml">
+      <configuration name="TratamentoTest.grauAcima" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TratamentoTest_grauAcima - 2019.01.14 at 00h 05m 25s.xml">
+      <configuration name="TratamentoTest.grauAcima" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TratamentoTest_maximoFicheiros - 2019.01.14 at 00h 08m 32s.xml">
+      <configuration name="TratamentoTest.maximoFicheiros" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TratamentoTest_maximoFicheiros - 2019.01.14 at 00h 08m 44s.xml">
+      <configuration name="TratamentoTest.maximoFicheiros" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TratamentoTest - 2019.01.14 at 00h 08m 53s.xml">
+      <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="TratamentoTest - 2019.01.14 at 00h 09m 11s.xml">
       <configuration name="TratamentoTest" configurationId="GradleRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65712000" />
+    <option name="totallyTimeSpent" value="71776000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -399,7 +403,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="878" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.4590846" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -410,7 +415,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286119" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.64026845" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.6394316" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.5967213" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -430,7 +435,7 @@
       <window_info anchor="right" id="Maven" order="3" />
       <window_info anchor="right" id="Palette" order="4" />
       <window_info anchor="right" id="Capture Analysis" order="5" />
-      <window_info anchor="right" id="Gradle" order="6" />
+      <window_info anchor="right" id="Gradle" order="6" weight="0.32955465" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
@@ -494,9 +499,6 @@
       </map>
     </option>
     <option name="upsourceUrl" value="https://upsource.labs.intellij.net" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Update configurações" />
@@ -570,8 +572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TratamentoTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1734">
-          <caret line="102" column="30" selection-start-line="102" selection-start-column="30" selection-end-line="102" selection-end-column="30" />
+        <state relative-caret-position="-2698">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -580,12 +582,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Tratamento.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="39" selection-start-line="12" selection-start-column="39" selection-end-line="12" selection-end-column="39" />
+        <state relative-caret-position="3493">
+          <caret line="285" lean-forward="true" selection-start-line="285" selection-end-line="285" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#8231#8258#0" expanded="true" />
-            <element signature="e#8886#8902#0" expanded="true" />
           </folding>
         </state>
       </provider>
